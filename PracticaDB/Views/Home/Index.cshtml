@@ -1,0 +1,33 @@
+﻿@model List<Equipos>
+
+<h1>Listado de equipos</h1>
+
+@Html.ActionLink("Nuevo equipo","Add","Home")
+
+
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Cant. de integrantes</th>
+        <th>Fecha de creación</th>
+        <th>Acciones</th>
+    </tr>
+
+    @foreach(var Equipo in Model)
+    {
+
+        <tr>
+            <td>@Equipo.Id</td>
+            <td>@Equipo.Nombre</td>
+            <td>@Equipo.CantidadIntegrantes</td>
+            <td>@Equipo.FechaCreacion.ToShortDateString()</td>
+            <td>
+                @Html.ActionLink("editar","Editar","Home", new { Id = Equipo.Id }, null)
+                @Html.ActionLink("eliminar", "Eliminar", "Home", new { Id = Equipo.Id }, null)                
+            </td>
+        </tr>
+    }
+</table>
+

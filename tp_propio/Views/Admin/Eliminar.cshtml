@@ -1,0 +1,23 @@
+﻿@model Paquete
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="alert alert-danger">
+                <h1 class="text-center">¿Está seguro de eliminar el paquete @Model.Nombre ?</h1>
+            </div>
+            @using (Html.BeginForm())
+            {
+                @Html.HiddenFor(m => m.Id);
+                <input type="submit" name="btnEliminar" id="btnEliminar" value="Eliminar" class="btn btn-success">
+                <a href="/admin/paquetes/index" class="btn btn-link">Cancelar</a>
+            }
+        </div>
+    </div>
+</div>
+
+

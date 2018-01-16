@@ -1,0 +1,23 @@
+﻿@model Paquete
+
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<div class="container">
+    <div class="row">
+        <h1 class="text-center">Nuevo Paquete</h1>
+        <div class="col-sm-8 col-sm-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    @using (Html.BeginForm("Nuevo", "Admin", FormMethod.Post, new { encType = "multipart/form-data" }))
+                    {
+
+                      
+                        Html.RenderPartial("FormPaquete", Model);
+                        
+                      }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

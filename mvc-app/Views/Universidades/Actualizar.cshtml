@@ -1,0 +1,22 @@
+﻿@using mvc_app.Models
+@model Universidad
+@{Layout = null;}
+@{
+    
+    ViewBag.Title = "Actualizar";
+    
+}
+
+<h2>@ViewBag.Title</h2>
+<form action="/Universidades/Update" method="post">
+    <!--los name deben coincidir con los campos del modelo-->
+    <input type="hidden" name="Id" value="@Model.Id"/>
+    <input type="text" name="Nombre" value="@Model.Nombre"/>
+    <input type="text" name="Direccion" value="@Model.Direccion"/>
+    <input type="text" name="CatidadCarreras" value="@Model.CantidadCarreras"/>
+    <input type="submit" />
+</form>
+
+
+
+

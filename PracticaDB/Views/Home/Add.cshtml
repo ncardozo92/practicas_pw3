@@ -1,0 +1,19 @@
+﻿@model Equipos
+
+<h2>Nuevo Equipo</h2>
+
+@using (Html.BeginForm())
+{
+
+    @Html.TextBoxFor( m => m.Nombre)
+    @Html.ValidationMessageFor( m=> m.Nombre)
+
+    @Html.TextBoxFor( m => m.CantidadIntegrantes)
+    @Html.ValidationMessageFor(m => m.CantidadIntegrantes)
+
+    @Html.TextBoxFor( m => m.FechaCreacion,"date",new { type="date"})
+    @Html.ValidationMessageFor(m => m.FechaCreacion)
+
+    <input type="submit" value="enviar" />
+}
+

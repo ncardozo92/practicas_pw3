@@ -1,0 +1,28 @@
+﻿@model Equipos
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Editar</title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+
+        @Html.HiddenFor(m => m.Id);
+
+        @Html.TextBoxFor(m => m.Nombre);
+
+        @Html.TextBoxFor(m => m.CantidadIntegrantes);
+
+        @Html.TextBoxFor(m => m.FechaCreacion, "", new { @type = "date" });
+
+        <input type="submit" value="modficar" id="modficar" name="modficar" />
+    }
+</body>
+</html>

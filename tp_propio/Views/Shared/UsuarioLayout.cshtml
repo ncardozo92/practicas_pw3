@@ -1,0 +1,16 @@
+﻿@{
+    Layout = "~/Views/Shared/BaseLayout.cshtml";
+}
+
+@section Menu{ 
+    @Html.Partial("_pvMenuUsuario")
+}
+
+@section scripts{
+    
+        @RenderSection("scripts", required: false)
+    }
+<section>
+    @RenderBody()
+</section>
+

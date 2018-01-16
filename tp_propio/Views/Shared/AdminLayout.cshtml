@@ -1,0 +1,15 @@
+﻿@{
+    Layout = "~/Views/Shared/BaseLayout.cshtml";
+    ViewBag.Title = "AdminLayout";
+}
+
+@section EstilosAdmin{
+    
+    @Styles.Render("~/Content/admin-css")   
+}
+
+@section Menu{ @Html.Partial("_pvMenuAdmin") }
+
+<section>
+    @RenderBody()
+</section>

@@ -1,0 +1,38 @@
+﻿@model Reserva
+@{
+    Layout = "~/Views/Shared/UsuarioLayout.cshtml";
+    ViewBag.Title = "Reservar";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+            <div class="panel panel-default">
+                <div class="alert alert-info">
+                    Usted está a punto de reservar el paquete @ViewBag.NombrePaquete.
+                </div>
+                <div class="panel-body">
+                    @using (Html.BeginForm("Reservar", "Paquetes", FormMethod.Post, new { @class = "form-horizontal" }))
+                    {
+                        @Html.HiddenFor( m=> m.IdPaquete)
+                        <div class="form-group">
+                            <label class="col-xs-8">Ingrese la cantidad de personas que viajarán</label>
+                            <div class="col-xs-4">
+                                @Html.TextBoxFor( m => m.CantPersonas, new { @class ="form-control" , @Value = "1"})
+                                @Html.ValidationMessageFor(m => m.CantPersonas )
+                            </div>
+                        </div>
+
+                            <div class="btn-group">
+                                <input type="submit" value="Confirmar" class="btn btn-success" />
+                                @Html.ActionLink("Cancelar","Detalles","Paquetes",new { idPaquete = @Model.Id }, new { @class = "btn btn-danger" })
+                            </div>
+                        
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

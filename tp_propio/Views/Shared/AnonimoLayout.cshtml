@@ -1,0 +1,38 @@
+﻿@{
+    Layout = "~/Views/Shared/BaseLayout.cshtml";
+    ViewBag.Title = "AnonimoLayout";
+}
+
+@{
+
+    string Menu = "_pvMenuAnonimo";
+
+    string Email = (string)Session["Email"];
+    bool IsAdmin = (Session["IsAdmin"] != null) ? (bool)Session["IsAdmin"] : false;
+
+    if (Email != null && IsAdmin)
+    {
+        Menu = "_pvMenuAdmin";
+    }
+    else if (Email != null && !IsAdmin)
+    {
+        Menu = "_pvMenuUsuario";
+    }
+
+    /*
+    if (Session["Admin"] != null && Session["Usuario"] != null)
+    {
+        Menu = "_pvMenuAdmin";
+    }
+    else if (Session["Admin"] == null && Session["Usuario"] != null)
+    {
+        Menu = "_pvMenuUsuario";
+    }
+    */
+}
+
+@section Menu{ @Html.Partial(Menu) }
+
+<section>
+    @RenderBody()
+</section>

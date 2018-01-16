@@ -1,0 +1,22 @@
+﻿@model mvc_app.Models.Empleado 
+@{
+    //';' va solo cuando se declaran variables en el bloque de codigo
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<form action="Validacion/Validado" method="post">
+    
+    <input type="text" name="Nombre"/>
+    @Html.ValidationMessageFor( m => m.Nombre )
+    
+    <input type="email" name="Email" />
+    @Html.ValidationMessageFor(m => m.Nombre)
+    <!-- la "m" hace referencia al modelo -->
+    <input type="number" name="Edad" />
+    @Html.ValidationMessageFor(m => m.Nombre)
+    
+    <button>Enviar</button>
+</form>
+

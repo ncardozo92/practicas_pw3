@@ -1,0 +1,31 @@
+﻿@model Paquete
+
+@{
+    Layout = "~/Views/Shared/AnonimoLayout.cshtml";
+    ViewBag.Title = "Detalles";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6">
+            <img src="~/imagenes/@Model.Foto" alt="@Model.Nombre" title="@Model.Nombre" />
+        </div>
+        <div class="col-xs-12 col-sm-6">
+            <h1 class="text-center">@Model.Nombre</h1>
+            <label>Desde @Model.FechaInicio.ToShortDateString() hasta @Model.FechaFin.ToShortDateString()</label>
+            <br />
+            <label>Acerca del paquete:</label>
+            @Model.Descripcion<br />
+
+            @if (DateTime.Now < Model.FechaInicio || DateTime.Now > Model.FechaFin)
+            {
+                <div class="alert alert-danger">El Paquete ya no se encuentra vigente</div>
+            }
+            else
+            {
+                @Html.ActionLink("Reservar", "Reservar", "Paquetes", new { id = Model.Id }, new { @class = "btn btn-info", @id = "reservar" })
+            }
+
+        </div>
+    </div>
+  </div>

@@ -1,0 +1,34 @@
+﻿footer{
+        background-color: rgb(80,80,80) !important;
+        color: rgb(255,255,255) !important;
+        padding: 10px 0px;
+    }
+
+table{
+
+    margin: 5px 0px;
+}
+
+img, .btn-detalles {
+    width: 100%;
+}
+
+.paquete{
+
+    margin-top: 5px;
+}
+
+
+
+
+.paquete-img{
+
+    height: 200px;
+    overflow: hidden;
+}
+
+.paquete-detalles {
+
+    height: 100px;
+}
+

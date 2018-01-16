@@ -1,0 +1,22 @@
+﻿@model Persona
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+    @using (Html.BeginForm())
+    {   /*
+        esto hace que al recibir una peticion get se genere un form con el action
+        apuntando a la misma uri que invocó la vista, pero con pertición post
+        */
+        @Html.HiddenFor( m => m.id)
+        @Html.TextBoxFor(m => m.nombre)
+        @Html.TextBoxFor(m => m.email)
+
+        <input type="submit" value="agendar" />
+    }
+    
+
+

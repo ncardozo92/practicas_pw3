@@ -1,0 +1,28 @@
+﻿@model List<Paquete>
+
+@{
+    Layout = "~/Views/Shared/AnonimoLayout.cshtml";
+    ViewBag.Title = "Bienvenido";
+}
+
+<div class="container">
+    <h2>Paquetes destacados</h2>
+    <div class="row">
+        @foreach (var Destacado in Model)
+        {
+            <div class="col-xs-6 col-sm-4 col-md-3 paquete">
+                <div class="paquete-img">
+                    <img src="~/imagenes/@Destacado.Foto" title="@Destacado.Foto" alt="img" />
+                </div>
+                <div class="paquete-detalles">
+                    <label>@Destacado.Nombre</label>
+                    <br />
+                    <label>Desde @Destacado.FechaInicio.ToShortDateString() hasta @Destacado.FechaInicio.ToShortDateString()</label>
+                    <br />
+                    <label>$@Destacado.PrecioPorPersona</label>
+                </div>
+                @Html.ActionLink("Detalles","Detalles","Paquetes", new { IdPaquete = Destacado.Id}, new { @class = "btn btn-info btn-detalles"})
+            </div>
+        }
+    </div>
+</div>

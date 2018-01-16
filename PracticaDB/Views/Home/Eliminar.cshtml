@@ -1,0 +1,20 @@
+﻿@model Equipos
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Eliminar</title>
+</head>
+<body>
+    <h1>Se eliminará el Equipo @Model.Nombre</h1>
+    @using (Html.BeginForm())
+    {
+
+        @Html.HiddenFor(m => m.Id)
+        <input type="submit" value="Eliminar" />
+        @Html.ActionLink("Cancelar","Index","Home")
+    }
+</body>
+</html>

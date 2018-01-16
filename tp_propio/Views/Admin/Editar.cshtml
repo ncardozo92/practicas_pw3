@@ -1,0 +1,25 @@
+﻿@model Paquete
+
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<div class="container">
+    <div class="row">
+        <h1 class="text-center">Editar Paquete</h1>
+        <div class="col-sm-8 col-sm-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    @using (Html.BeginForm("Editar", "Admin", FormMethod.Post, new { encType = "multipart/form-data" }))
+                    {
+                        @Html.HiddenFor(m => m.Id)
+                        @Html.HiddenFor(m => m.Foto)
+
+                      
+                        Html.RenderPartial("FormPaquete",Model);
+                     
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

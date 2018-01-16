@@ -1,0 +1,17 @@
+﻿@model List<Persona>
+@{
+    ViewBag.Title = "Listado";
+}
+
+<h2>Listado</h2>
+
+<table>
+    @foreach (Persona per in Model) {
+    <tr>
+        <td>@per.id</td>
+        <td>@per.nombre</td>
+        <td>@per.email</td>
+    </tr>
+    }
+</table>
+

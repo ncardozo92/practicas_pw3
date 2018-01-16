@@ -1,0 +1,42 @@
+﻿@model List<Reserva>
+
+@{
+    Layout = "~/Views/Shared/UsuarioLayout.cshtml";
+}
+
+@section scripts{
+    
+        @Scripts.Render("~/bundles/CancelarReserva")
+    }
+
+<div class="container">
+    <h2>Historial de Reservas</h2>
+    <div class="row">
+        <div class="col-xs-12 table-responsive">
+            <table class="table table-striped">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Fecha Inicio</th>
+                    <th>Fecha fin</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                    <th>Precio Total</th>
+                    <th>Acciones</th>
+                </tr>
+                @foreach (Reserva Reserva in Model)
+                {
+                    <tr>
+                        <td>@Reserva.Paquete.Nombre</td>
+                        <td>@Reserva.Paquete.FechaInicio</td>
+                        <td>@Reserva.Paquete.FechaFin</td>
+                        <td>@Reserva.CantPersonas</td>
+                        <td>$@Reserva.Paquete.PrecioPorPersona</td>
+                        <td>$@(Reserva.Paquete.PrecioPorPersona * Reserva.CantPersonas)</td>
+                        <td><button class="btn btn-danger cancelar-reserva" data-value="@Reserva.Id">Cancelar</button></td>
+                    </tr>
+
+                }
+            </table>
+        </div>
+    </div>
+</div>

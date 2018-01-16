@@ -1,0 +1,14 @@
+﻿table#paquetes td:nth-child(4){
+
+    width: 150px !important;
+}
+
+td, th{
+
+    vertical-align: middle !important;
+}
+
+img{
+
+    width: 100%;
+}

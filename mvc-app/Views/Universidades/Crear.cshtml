@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "CrearNuevo";
+}
+
+<h2>CrearNuevo</h2>
+
+<form action="/Universidades/Nueva" method="post">
+    <!--los name deben coincidir con los campos del modelo-->
+
+    <input type="text" name="Nombre"/>
+    <input type="text" name="Direccion"/>
+    <input type="text" name="CatidadCarreras"/>
+    <input type="submit"/>
+</form>
+
