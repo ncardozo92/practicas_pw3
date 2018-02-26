@@ -1,12 +1,18 @@
 ﻿footer{
-        background-color: rgb(80,80,80) !important;
+    background-color: rgb(80,80,80) !important;
+    padding: 10px 0px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+    footer a, footer a:focus {
         color: rgb(255,255,255) !important;
-        padding: 10px 0px;
+        text-decoration: none;
     }
 
-table{
+.table-responsive{
 
-    margin: 5px 0px;
+    margin-top: 10px;
 }
 
 img, .btn-detalles {
@@ -17,9 +23,6 @@ img, .btn-detalles {
 
     margin-top: 5px;
 }
-
-
-
 
 .paquete-img{
 

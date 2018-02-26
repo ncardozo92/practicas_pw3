@@ -66,20 +66,22 @@
         </div>
     </div>
     <div class="row">
-        <ul class="pagination">
-            @for (int i = 1; i <= Model.Paginas; i++)
-            {
-                if (i == Model.PaginaActual)
+        <div class="col-xs-12">
+            <ul class="pagination">
+                @for (int i = 1; i <= Model.Paginas; i++)
                 {
-                    <li class="active"><a href="/Admin/Paquetes/Index/@i">@i</a></li>
-                }
-                else
-                {
-                    <li><a href="/Admin/Paquetes/Index/@i">@i</a></li>
-                }
+                    if (i == Model.PaginaActual)
+                    {
+                        <li class="active"><a href="/Admin/Paquetes/Index/@i">@i</a></li>
+                    }
+                    else
+                    {
+                        <li><a href="/Admin/Paquetes/Index/@i">@i</a></li>
+                    }
 
-            }
-        </ul>
+                }
+            </ul>
+        </div>
     </div>
 </div>
 

@@ -193,10 +193,18 @@ namespace tp_propio.Controllers
             {
                 Paquete Paquete = PaqueteService.GetPaquete(p.Id);
 
-                string path = Server.MapPath("~/imagenes/");
-                string FileName = Paquete.Foto;
+                try
+                {
+                    string path = Server.MapPath("~/imagenes/");
+                    string FileName = Paquete.Foto;
 
-                System.IO.File.Delete(path + FileName);
+
+                    System.IO.File.Delete(path + FileName);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
 
                 ReservaService.EliminarReservas(p.Id);
 
